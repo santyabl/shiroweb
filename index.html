@@ -28,28 +28,38 @@
 
     <body data-spy="scroll" data-target=".navbar" data-offset="51">
         <!-- Nav Bar Start -->
-        <div class="navbar navbar-expand-lg bg-light navbar-light">
-            <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">Portalio</a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+    <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">Portalio</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto">
-                        <a href="#home" class="nav-item nav-link active">Inicio</a>
-                        <a href="#about" class="nav-item nav-link">Acerca de Mi</a>
-                        <a href="#service" class="nav-item nav-link">Servicios</a>
-                        <a href="#experience" class="nav-item nav-link">Formacion</a>
-                        <a href="#portfolio" class="nav-item nav-link">Portafolio</a>
-                        <a href="#contact" class="nav-item nav-link">Contacto</a>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+                <a href="#home" class="nav-item nav-link active">Inicio</a>
+                <a href="#about" class="nav-item nav-link">Acerca de Mi</a>
+                <a href="#service" class="nav-item nav-link">Servicios</a>
+                <a href="#experience" class="nav-item nav-link">Formacion</a>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Portafolio</a>
+                    <div class="dropdown-menu border-0 m-0">
+                        <a href="fotografia.html" class="dropdown-item">Fotografia y Ilustracion</a>
+                        <a href="pagina2.html" class="dropdown-item">Identidad de marca</a>
+                        <a href="pagina3.html" class="dropdown-item">Illustración digital</a>
+                        <a href="pagina4.html" class="dropdown-item">Diseño editorial</a>
+                        <a href="pagina5.html" class="dropdown-item">Campaña Publicitaria</a>
                     </div>
                 </div>
+                <a href="#contact" class="nav-item nav-link">Contacto</a>
             </div>
         </div>
+    </div>
+</div>
         <!-- Nav Bar End -->
 
-
+        <!-- haCER SUBMENU PARA PROTAFOLIO-->
         <!-- Hero Start -->
         <div class="hero" id="home">
             <div class="container-fluid">
@@ -134,71 +144,75 @@
             </div>
         </div>
         <!-- About End -->
-        
-        
+
         <!-- Service Start -->
-        <div class="service" id="service">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Que hago</p>
-                    <h2>Mis asombrosos servicios</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fa fa-laptop"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Retoque Fotografico</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                                </p>
-                            </div>
-                        </div>
+<div class="service" id="service">
+    <div class="container">
+        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+            <p>Que hago</p>
+            <h2>Mis asombrosos servicios</h2>
+        </div>
+        <div class="row">
+            
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <img src="svg/foto.png" alt="Icono Retoque Fotográfico">
                     </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fi fi-brands-illustrator"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Ilustracion Digital</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fab fa-android"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Diseño Editorial</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fab fa-apple"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Identidad de Marca</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                                </p>
-                            </div>
-                        </div>
+                    <div class="service-text">
+                        <h3>Retoque Fotografico</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
+                        </p>
                     </div>
                 </div>
             </div>
+            
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <img src="svg/vector.png" alt="Icono Ilustración Digital">
+                    </div>
+                    <div class="service-text">
+                        <h3>Ilustracion Digital</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <img src="svg/diseno.png" alt="Icono Diseño Editorial">
+                    </div>
+                    <div class="service-text">
+                        <h3>Diseño Editorial</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <img src="svg/marca.png" alt="Icono Identidad de Marca">
+                    </div>
+                    <div class="service-text">
+                        <h3>Identidad de Marca</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
         </div>
+    </div>
+</div>
         <!-- Service End -->
         
         
@@ -332,7 +346,7 @@
                                 <img src="img/portfolio-3.jpg" alt="Image">
                             </div>
                             <div class="portfolio-text">
-                                <h3>Illustración digital</h3>
+                                <h3>Campaña Publicitaria</h3>
                                 <a class="btn" href="img/portfolio-3.jpg" data-lightbox="portfolio">+</a>
                             </div>
                         </div>

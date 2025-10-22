@@ -146,8 +146,6 @@ a:focus {
     box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
 }
 
-/* ... (El resto de tus estilos .navbar, .navbar-brand, etc., se mantiene) ... */
-
 .navbar .navbar-brand {
     margin: 0;
     font-size: 45px;
@@ -193,8 +191,44 @@ a:focus {
 
 
 @media (min-width: 992px) {
-    .navbar {
-        position: absolute;
+    /* --- INICIO: CAMBIOS PARA CENTRADO DEL HERO EN ESCRITORIO --- */
+    
+    /* 1. Ocultar la columna de la imagen (la última .col-md-6) */
+    .hero .col-md-6:last-child {
+        /* d-none d-md-block en HTML ya la oculta en tablet, 
+           pero esta regla asegura que no interfiera en desktop. */
+        display: none !important; 
+    }
+    
+    /* 2. Forzar a la columna de contenido (la primera .col-md-6) a ocupar todo el ancho */
+    .hero .col-md-6:first-child { 
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    
+    /* 3. Eliminar el padding izquierdo forzado y centrar el contenido (el bloque de texto y botones) */
+    .hero .hero-content {
+        padding-left: 0; /* Elimina el padding-left: 75px del estilo base */
+        align-items: center; /* Centra horizontalmente el contenido flex */
+    }
+    
+    /* 4. Centrar el texto dentro del bloque */
+    .hero .hero-text {
+        text-align: center;
+    }
+    
+    /* 5. Centrar los botones */
+    .hero .hero-btn {
+        text-align: center;
+    }
+    
+/* --- FIN: CAMBIOS PARA CENTRADO DEL HERO EN ESCRITORIO --- */
+
+/* (El resto de tus estilos @media (min-width: 992px) permanece igual) */
+
+.navbar {
+    position: absolute;
         width: 100%;
         padding: 30px 60px;
         background: transparent !important;
@@ -280,6 +314,39 @@ a:focus {
         color: #853A76;
         background: transparent;
     }
+    
+    /* --- INICIO: CAMBIOS PARA CENTRADO DEL HERO EN MÓVIL/TABLET --- */
+    .hero .hero-content {
+        /* Aseguramos que el contenido esté centrado horizontalmente en móvil */
+        align-items: center;
+        padding-left: 15px; /* Restauramos el padding estándar en móvil */
+    }
+    
+    .hero .hero-image {
+        /* Mostramos la imagen en tablet/móvil si está oculta en desktop */
+        display: block !important; 
+        text-align: center;
+        padding-right: 15px; /* Restauramos el padding estándar en móvil */
+    }
+    /* --- FIN: CAMBIOS PARA CENTRADO DEL HERO EN MÓVIL/TABLET --- */
+    
+    .hero .hero-text p {
+        font-size: 20px;
+    }
+    
+    .hero .hero-text h1 {
+        font-size: 45px;
+    }
+    
+    .hero .hero-text h2 {
+        font-size: 25px;
+        height: 25px;
+    }
+    
+    .hero .hero-btn .btn {
+        padding: 12px 30px;
+        letter-spacing: 1px;
+    }
 }
 
 
@@ -292,7 +359,7 @@ a:focus {
     margin-bottom: 45px;
     padding: 120px 0 0 0;
     overflow: hidden;
-    background: linear-gradient(rgba(246, 179, 229, .95), rgba(87, 0, 119, .95)), url(../img/hero-bg.jpg);
+    background: linear-gradient(rgba(246, 179, 229, .85), rgba(87, 0, 119, .95)), url(../img/hero2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -315,11 +382,18 @@ a:focus {
 
 .hero .hero-content {
     position: relative;
-    padding-left: 75px;
+    /* Center the hero text horizontally and vertically */
+    padding-left: 0;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;      /* vertical center */
+    justify-content: center;  /* horizontal center */
     flex-direction: column;
+    min-height: calc(100vh - 120px); /* keep hero visible and centered in viewport */
+}
+ 
+.hero .hero-text {
+    width: 100%;
+    text-align: center;
 }
 
 .hero .hero-text p {
@@ -377,10 +451,6 @@ a:focus {
 @media (max-width: 991.98px) {
     .hero {
         padding-top: 60px;
-    }
-    
-    .hero .hero-content {
-        padding: 0 15px;
     }
     
     .hero .hero-text p {
@@ -768,7 +838,6 @@ a:focus {
 }
 
 
-
 /*******************************/
 /********* Service CSS *********/
 /*******************************/
@@ -802,22 +871,16 @@ a:focus {
     background: #ffffff;
 }
 
-/* ---------------------------------------------------------------------- */
-/* --- CAMBIO: Reglas para la imagen PNG (<img>) en lugar del ícono (<i>) --- */
-/* ---------------------------------------------------------------------- */
-
-.service .service-icon img {
+.service .service-icon i {
     position: relative;
-    width: 60px; /* Tamaño base del ícono de fuente original */
-    height: auto;
+    font-size: 60px;
+    color: #570077;
     transition: .3s;
 }
 
-.service .service-item:hover .service-icon img {
-    width: 75px; /* Efecto hover: el tamaño aumenta */
+.service .service-item:hover i {
+    font-size: 75px;
 }
-
-/* ---------------------------------------------------------------------- */
 
 .service .service-text {
     position: relative;
@@ -860,14 +923,7 @@ a:focus {
 /*******************************/
 .portfolio {
     position: relative;
-    /* Aumentamos el padding inferior para asegurar espacio después de los elementos */
-    padding: 45px 0 60px 0; 
-}
-
-/* IMPORTANTE: Corrige la superposición al asegurar que el contenedor de las filas se expanda. */
-/* Si usas Bootstrap con .row, a veces es necesario en el contenedor padre de las columnas */
-.portfolio .container {
-    overflow: hidden; 
+    padding: 45px 0 15px 0;
 }
 
 .portfolio #portfolio-filter {
@@ -905,9 +961,6 @@ a:focus {
 
 .portfolio .portfolio-item {
     position: relative;
-    /* Añadimos margen inferior para separar los proyectos */
-    margin-bottom: 30px; 
-    overflow: hidden; /* Asegura que el contenido animado no se salga */
 }
 
 .portfolio .portfolio-wrap {
@@ -925,15 +978,12 @@ a:focus {
     width: 100%; 
     height: 100%; 
     object-fit: cover;
-    /* CORRECCIÓN CLAVE: Eliminamos el zoom/movimiento inicial del CSS original */
-    transform: scale(1); 
+    transform: scale(1.1);
     transition: .5s;
 }
 
-/* CORRECCIÓN CLAVE: Reemplazamos el movimiento incorrecto con un zoom suave */
-.portfolio .portfolio-item:hover .portfolio-img img {
-    transform: scale(1.1);
-    /* Se elimina el margin-left: 15px; que desplazaba la imagen */
+.portfolio .portfolio-item:hover img {
+    margin-left: 15px;
 }
 
 .portfolio .portfolio-text {
@@ -945,7 +995,6 @@ a:focus {
     align-items: center;
     background: #ffffff;
     box-shadow: 0 0 15px rgba(0, 0, 0, .12);
-    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
 }
 
 .portfolio .portfolio-text h3 {
@@ -968,12 +1017,14 @@ a:focus {
     font-weight: 100;
 }
 
-.portfolio .portfolio-item:hover .portfolio-text a.btn {
+.portfolio .portfolio-item:hover a.btn {
     color: #570077;
     background: transparent;
     box-shadow: inset 0 0 0 0 #570077;
     border-color: #570077;
 }
+
+
 /*******************************/
 /********* Banner CSS **********/
 /*******************************/
