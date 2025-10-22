@@ -128,7 +128,11 @@ a:focus {
 .back-to-top:hover i {
     color: #414141;
 }
-
+.juxtapose {
+            margin: 50px auto;
+            max-width: 800px; /* Ajusta el ancho según tus necesidades */
+            height: auto;
+}
 
 /**********************************/
 /*********** Nav Bar CSS **********/
