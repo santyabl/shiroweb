@@ -18,9 +18,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="lib/animate/animate.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="css/uicons-brands.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/juxtapose.css">
+        <link href="lib/libro/turn.css" rel="stylesheet">
 
 
 
@@ -69,7 +68,6 @@
                 <div class="hero-content">
                     <div class="hero-text text-center">
                         <p></p> 
-                        <h1>Diseño</h1> 
                     </div>
                     <div class="hero-btn">
                         </div>
@@ -83,12 +81,67 @@
     </div>
 </div> 
 <!-- Hero End -->
-<div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+<div class="row">
+    <div class="col-12">
+        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
             <p>2025</p>
-            <h2>Proyecto de Retoque</h2>
+            <h2>Tipografia</h2>
         </div>
-
         
+        <div class="row justify-content-center">
+            
+            <div class="col-12 col-md-5 mb-5">
+                <div class="img">
+                    <img src="img/diseno/poster1.png" alt="Image" class="img-fluid">
+                </div>
+            </div>
+            
+            <div class="col-11 col-md-5 mb-5">
+                <div class="img">
+                    <img src="img/diseno/poster2.jpg" alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <h2>Revista Digital</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div id="magazine">
+            <div class="page"><img src="img/diseno/revista1/1.jpg" alt="Página 1 (Portada)"></div>
+            <div class="page"><img src="img/diseno/revista1/2.jpg" alt="Página 2"></div>
+            <div class="page"><img src="img/diseno/revista1/3.jpg" alt="Página 3"></div>
+            <div class="page"><img src="img/diseno/revista1/4.jpg" alt="Página 4"></div>
+            <div class="page"><img src="img/diseno/revista1/5.jpg" alt="Página 5"></div>
+            <div class="page"><img src="img/diseno/revista1/6.jpg" alt="Página 6"></div>
+            <div class="page"><img src="img/diseno/revista1/7.jpg" alt="Página 7"></div>
+            <div class="page"><img src="img/diseno/revista1/8.jpg" alt="Página 8"></div>
+            <div class="page"><img src="img/diseno/revista1/9.jpg" alt="Página 9"></div>
+            <div class="page"><img src="img/diseno/revista1/10.jpg" alt="Página 10"></div>
+            <div class="page"><img src="img/diseno/revista1/11.jpg" alt="Página 11"></div>
+            <div class="page"><img src="img/diseno/revista1/12.jpg" alt="Página 12"></div>
+            <div class="page"><img src="img/diseno/revista1/13.jpg" alt="Página 13"></div>
+            <div class="page"><img src="img/diseno/revista1/14.jpg" alt="Página 14"></div>
+            <div class="page"><img src="img/diseno/revista1/15.jpg" alt="Página 15"></div>
+            <div class="page"><img src="img/diseno/revista1/16.jpg" alt="Página 16"></div>
+            <div class="page"><img src="img/diseno/revista1/17.jpg" alt="Página 17"></div>
+            <div class="page"><img src="img/diseno/revista1/18.jpg" alt="Página 18"></div>
+            <div class="page"><img src="img/diseno/revista1/19.jpg" alt="Página 19"></div>
+            <div class="page"><img src="img/diseno/revista1/20.jpg" alt="Página 20"></div>
+            <div class="page"><img src="img/diseno/revista1/21.jpg" alt="Página 21"></div>
+            <div class="page"><img src="img/diseno/revista1/22.jpg" alt="Página 22"></div>
+            <div class="page"><img src="img/diseno/revista1/23.jpg" alt="Página 23"></div>
+            <div class="page"><img src="img/diseno/revista1/24.jpg" alt="Página 24 (Contraportada)"></div>
+        </div>
+    </div>
+    </div>
         <!-- Footer Start -->
        <div class="footer wow fadeIn" data-wow-delay="0.3s">
             <div class="container-fluid">
@@ -135,9 +188,35 @@
         <script src="lib/typed/typed.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="lib/comparadaor/juxtapose.js"></script>
+        <script src="lib/libro/turn.js"></script>
+<script>
+    $(document).ready(function() {
+        // --- VALORES OPTIMIZADOS PARA LA PANTALLA ---
+        // Tus páginas tienen una proporción vertical de 2481 (ancho) x 3508 (alto).
+        // Proporción: 3508 / 2481 ≈ 1.41
         
+        var bookHeight = 700; // Altura del libro optimizada para la pantalla
+        // Ancho calculado para DOBLE PÁGINA (700 / 1.41) * 2 ≈ 993
+        var bookWidth = 993; 
+
+        // Inicializa el plugin Turn.js
+        $('#magazine').turn({
+            display: 'double',
+            acceleration: true,
+            gradients: true,
+            autoCenter: true,
+            width: bookWidth, // 993px
+            height: bookHeight // 700px
+        });
+        
+        // Opcional: Navegación con teclas de flecha
+        $(document).keydown(function(e){
+            var magazine = $('#magazine');
+            if (e.keyCode==37) magazine.turn('previous'); // Flecha izquierda
+            else if (e.keyCode==39) magazine.turn('next'); // Flecha derecha
+        });
+    });
+</script>
         <!-- Contact Javascript File -->
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
