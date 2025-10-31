@@ -1323,6 +1323,36 @@ a:focus {
 .blog .blog-meta p:last-child {
     margin: 0;
 }
+.container {
+    /* Asegura que la posición absoluta de 'corner-indicator' se base en este contenedor */
+    position: relative; 
+}
+
+/* * 2. Posicionar la flecha de forma absoluta sobre el contenedor. 
+ */
+.corner-indicator {
+    position: absolute;
+    top: 170px;       /* <-- ¡AJUSTE CLAVE! Aumenta este valor para bajarlo */
+    right: 60px;     
+    z-index: 10;     
+    color: #853A76; 
+    animation: bounce 2s infinite;
+}
+/* ... resto del CSS ... */
+
+/* * 3. Animación simple (Opcional, pero genial para una indicación)
+ */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px); /* Sube un poco */
+  }
+  60% {
+    transform: translateY(-5px);  /* Baja un poco menos */
+  }
+}
 /*******************************/
 /******** Retouch Description CSS ********/
 /*******************************/
